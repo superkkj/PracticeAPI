@@ -1,0 +1,29 @@
+
+#    url: jdbc:h2:tcp://localhost/~/test
+
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:~/test
+    driver-class-name: org.h2.Driver
+    username: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties.hibernate.hbm2ddl.auto: update
+    showSql: true
+  messages:
+    basename: i18n/exception
+    encoding: UTF-8
+
+
+
+
+
+#  create – 서버 시작할 때 모든 테이블을 생성합니다.
+#  create-drop – 서버 시작할 때 테이블을 생성하고 종료할 때 생성된 테이블을 삭제합니다.
+#  update – 서버 시작 시 Entity와 Table을 비교하여 변경된 내용을 반영합니다. Table이 없으면 새롭게 생성합니다.
+#  validate – 서버 시작 시 Entity와 실제 Table을 비교하여 다르면 시작하지 않고 종료합니다.
+#  none – 아무런 처리를 하지 않습니다.
